@@ -33,6 +33,7 @@ class CategoryForm extends React.Component {
   }
 
   handleSubmit(event) {
+    console.log('this props in handle submit category', this.props);
     let submitFormName = this.props.name;
     event.preventDefault();
     if (this.props.name === 'create') {
@@ -56,7 +57,7 @@ class CategoryForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state.categories
+  categories: state.category.categories
 });
 
 const mapDispatchToProps = (dispatch, getState) => {

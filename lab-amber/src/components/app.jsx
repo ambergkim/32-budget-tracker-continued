@@ -3,10 +3,11 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-import categoryApp from '../reducers/category-app.js'
-import Dashboard from './dashboard.jsx';
+import reducers from '../reducers/';
 
-const store = createStore(categoryApp);
+const store = createStore(reducers);
+
+import Dashboard from './dashboard.jsx';
 
 class App extends React.Component {
   render() {

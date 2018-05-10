@@ -22,4 +22,7 @@ main.jsx
          |_ components/category-list.jsx
             |_ components/category-item.jsx
                |_ components/category-form.jsx // for updating categories
+               |_ ExpenseForm - CREATING expenses under the category
+               |_ Expense Items - epense list display
+                  |_ ExpenseForm - UPDATING expenses under the category
 ```
