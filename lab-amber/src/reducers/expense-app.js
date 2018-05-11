@@ -10,6 +10,8 @@ const initialState = {
 }
 
 export default function expenseReducer(state, action) {
+  console.log('state in expense reducer', state);
+
   if (state === undefined) {
     return initialState;
   }
@@ -23,7 +25,6 @@ export default function expenseReducer(state, action) {
   switch(action.type) {
     case EXPENSE_CREATE:
       console.log('expense reducer create fired.');
-      console.log('state expenses', state.expenses);
       currentExpenses = state.expenses.slice();
       let newExpense = Object.assign({}, {id: uuidv1(), isEditing: false}, action.value);
       currentExpenses.push(newExpense);

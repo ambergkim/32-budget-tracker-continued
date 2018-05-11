@@ -35,9 +35,9 @@ class ExpenseForm extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     console.log('state at expense submit', this.state);
     let submitFormName = this.props.name;
-    event.preventDefault();
     if (this.props.name === 'create') {
       this.props.expenseCreate(this.state);
     } else if (this.props.name === 'update') {
