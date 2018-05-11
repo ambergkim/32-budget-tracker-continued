@@ -46,5 +46,6 @@ export default function categoryReducer(state, action) {
       categoryIndex = currentCategories.indexOf(categoryToRemove);
       currentCategories.splice(categoryIndex, 1);
       return Object.assign(newState, state, {categories: currentCategories});
+    default: return state;
   }
 }

@@ -28,7 +28,7 @@ class CategoryList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state.category.categories,
+  categories: state.categories.categories,
 });
 
 const mapDispatchToProps = (dispatch, getState) => {

@@ -1,15 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {
-  categoryUpdate,
-  categoryDestroy,
-} from '../actions/category-actions.js';
+  expenseUpdate,
+  expenseDestroy,
+} from '../actions/expense-actions.js';
 
-import CategoryForm from './category-form.jsx';
 import ExpenseForm from './expense-form.jsx';
 import ExpenseList from './expense-list.jsx';
 
-class CategoryItem extends React.Component {
+class ExpenseItem extends React.Component {
   constructor(props) {
     super(props);
 
@@ -20,47 +19,47 @@ class CategoryItem extends React.Component {
 
   toggleEdit(event) {
     let id = event.target.id;
-    this.props.categoryUpdate({isEditing: true, id});;
+    this.props.expenseUpdate({isEditing: true, id});;
   }
 
   toggleOffEdit(event) {
     let id = event.target.id;
-    this.props.categoryUpdate({isEditing: false, id});;
+    this.props.expenseUpdate({isEditing: false, id});;
   }
 
   handleDelete(event) {
     event.preventDefault();
     let id = event.target.id;
-    this.props.categoryDestroy(id);
+    this.props.expenseDestroy(id);
   }
 
   render() {
     if (this.props.isEditing === true) {
       return (
         <div>
-          <CategoryForm name="update" id={this.props.id}></CategoryForm><button onClick={this.toggleOffEdit} id={this.props.id}>Cancel</button>
+          <ExpenseForm name="update" id={this.props.id}></ExpenseForm><button onClick={this.toggleOffEdit} id={this.props.id}>Cancel</button>
         </div>
       )
     }
     return (
       <li key={this.props.key} id={this.props.id}>
         <h3>{this.props.name}: ${this.props.budget}<button id={this.props.id} onClick={this.handleDelete}>X</button> <button id={this.props.id} onClick={this.toggleEdit}>Edit</button></h3> 
-        <ExpenseForm categoryId={this.props.id} name="create"/>
-        {/* <ExpenseList /> */}
+        <ExpenseForm />
+        <ExpenseList />
       </li>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  categories: state.categories.categories
+  expenses: state.expenses.expenses
 });
 
 const mapDispatchToProps = (dispatch, getState) => {
   return {
-    categoryUpdate: (values) => dispatch(categoryUpdate(values)),
-    categoryDestroy: id => dispatch(categoryDestroy(id)),
+    expenseUpdate: (values) => dispatch(expenseUpdate(values)),
+    expenseDestroy: id => dispatch(expenseDestroy(id)),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoryItem);
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseItem);
