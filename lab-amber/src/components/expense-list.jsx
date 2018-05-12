@@ -11,16 +11,21 @@ class ExpenseList extends React.Component {
   }
 
   displayAllExpenses() {
-    console.log('this props', this.props);
-    return this.props.expenses.map(expense => {
-      return <ExpenseItem key={expense.id} id={expense.id} name={expense.name} budget={expense.budget} isEditing={expense.isEditing}></ExpenseItem>
+    console.log('expense list props expenses', this.props.expenses);
+    return this.props.expenses.map((expense, i) => {
+      return <ExpenseItem key={i} categoryId={expense.categoryId} name={expense.name} amount={expense.amount}></ExpenseItem>
     });
   }
+
+  // name: '',
+  // amount: 0,
+  // timestamp: Date.now(),
+  // categoryId: this.props.categoryId
+
 
   render() {
     return (
       <div>
-        <h2>Current budget list:</h2>
         <ul>{this.displayAllExpenses()}</ul>
       </div>
     )

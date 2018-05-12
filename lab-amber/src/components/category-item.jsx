@@ -46,7 +46,7 @@ class CategoryItem extends React.Component {
       <li key={this.props.key} id={this.props.id}>
         <h3>{this.props.name}: ${this.props.budget}<button id={this.props.id} onClick={this.handleDelete}>X</button> <button id={this.props.id} onClick={this.toggleEdit}>Edit</button></h3> 
         <ExpenseForm categoryId={this.props.id} name="create"/>
-        {/* <ExpenseList /> */}
+        <ExpenseList />
       </li>
     )
   }

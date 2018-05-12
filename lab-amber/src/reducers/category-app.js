@@ -35,8 +35,8 @@ export default function categoryReducer(state, action) {
       if (action.values.name) {
         currentCategories[categoryIndex].name = action.values.name;
       }
-      if (action.values.budget) {
-        currentCategories[categoryIndex].budget = action.values.budget;
+      if (action.values.amount) {
+        currentCategories[categoryIndex].amount = action.values.amount;
       }
       return Object.assign(newState, state, {categories: currentCategories});
     case CATEGORY_DESTROY:

@@ -11,7 +11,7 @@ class ExpenseForm extends React.Component {
     super(props);
     this.state = {
       name: '',
-      budget: 0,
+      amount: 0,
       timestamp: Date.now(),
       categoryId: this.props.categoryId
     }
@@ -29,7 +29,7 @@ class ExpenseForm extends React.Component {
 
   handleAmountChange(event) {
     let newState = {
-      budget: event.target.value
+      amount: event.target.value
     }
     this.setState(newState);
   }
@@ -51,7 +51,7 @@ class ExpenseForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleNameChange} type="text" placeholder="expense name" required="true"/>
-        <input onChange={this.handleAmountChange} name="budget" type="text" placeholder="budget amount" required="true"/>
+        <input onChange={this.handleAmountChange} name="amount" type="text" placeholder="amount amount" required="true"/>
         <button type="submit">Submit</button>
       </form>
     )

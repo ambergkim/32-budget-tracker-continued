@@ -21,7 +21,7 @@ class CategoryList extends React.Component {
     return (
       <div>
         <h2>Current budget list:</h2>
-        <ul>{this.displayAllCategories()}</ul>
+        <ol>{this.displayAllCategories()}</ol>
       </div>
     )
   }
