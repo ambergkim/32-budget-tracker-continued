@@ -45,7 +45,7 @@ class CategoryItem extends React.Component {
     return (
       <li key={this.props.key} id={this.props.id}>
         <h3>{this.props.name}: ${this.props.budget}<button id={this.props.id} onClick={this.handleDelete}>X</button> <button id={this.props.id} onClick={this.toggleEdit}>Edit</button></h3> 
-        <ExpenseForm categoryId={this.props.id} name="create"/>
+        <ExpenseForm categoryId={this.props.id} name="create" buttonText="Add Expense" />
         <ExpenseList categoryId={this.props.id}/>
       </li>
     )

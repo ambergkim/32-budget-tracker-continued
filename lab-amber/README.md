@@ -1,6 +1,6 @@
-# Amber Kim: React/Redux Exercise
+# Amber Kim: React/Redux, Combine Reducers Exercise.
 
-## Description: A small budget list React app that is able to create, update and delete a budget list item.
+## Description: A small budget list React app that is able to create, update and delete a budget list item and add, update and delete expense items under each budget list item.
 
 ## Technologies
 * JavaScript

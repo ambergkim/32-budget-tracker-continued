@@ -55,7 +55,7 @@ class ExpenseForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleNameChange} type="text" placeholder="expense name" required="true"/>
         <input onChange={this.handleAmountChange} name="amount" type="text" placeholder="amount amount" required="true"/>
-        <button type="submit">Submit</button>
+        <button type="submit">{this.props.buttonText}</button>
       </form>
     )
   }
