@@ -3,7 +3,6 @@ export const EXPENSE_UPDATE = 'EXPENSE_UPDATE';
 export const EXPENSE_DESTROY = 'EXPENSE_DESTROY';
 
 export function expenseCreate(value) {
-  console.log('expense action value', value);
   return {type: EXPENSE_CREATE, value};
 }
 

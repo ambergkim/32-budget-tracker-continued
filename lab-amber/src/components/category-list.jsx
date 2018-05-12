@@ -11,7 +11,6 @@ class CategoryList extends React.Component {
   }
 
   displayAllCategories() {
-    console.log('this props', this.props);
     return this.props.categories.map(category => {
       return <CategoryItem key={category.id} id={category.id} name={category.name} budget={category.budget} isEditing={category.isEditing}></CategoryItem>
     });
