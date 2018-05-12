@@ -6,6 +6,8 @@ import {
   expenseDestroy
 } from '../actions/expense-actions.js';
 
+import uuidv1 from 'uuid/v1';
+
 class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +15,7 @@ class ExpenseForm extends React.Component {
       name: '',
       amount: 0,
       timestamp: Date.now(),
-      categoryId: this.props.categoryId
+      categoryId: this.props.categoryId,
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleAmountChange = this.handleAmountChange.bind(this);

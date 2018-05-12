@@ -26,7 +26,7 @@ export default function expenseReducer(state, action) {
     case EXPENSE_CREATE:
       console.log('expense reducer create fired.');
       currentExpenses = state.expenses.slice();
-      let newExpense = Object.assign({}, action.value);
+      let newExpense = Object.assign({}, action.value, {id: uuidv1()});
       currentExpenses.push(newExpense);
       return Object.assign(newState, state, {expenses: currentExpenses});
     case EXPENSE_UPDATE:
@@ -47,7 +47,10 @@ export default function expenseReducer(state, action) {
     case EXPENSE_DESTROY:
       console.log('expense reducer destroy fired.');
       currentExpenses = state.expenses.slice();
+      console.log('reducer delete expenses list', currentExpenses);
+      console.log('reducer delete action id', action.id);
       let expenseToRemove = currentExpenses.find(expense => {
+        console.log('reducer delete expense id', expense.id);
         return expense.id === action.id;
       });
       expenseIndex = currentExpenses.indexOf(expenseToRemove);

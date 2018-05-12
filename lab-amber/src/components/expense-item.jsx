@@ -43,7 +43,10 @@ class ExpenseItem extends React.Component {
     // }
     return (
       <li key={this.props.key} id={this.props.id}>
-        <p>{this.props.name}: -${this.props.amount}</p>
+        <p>{this.props.name}: -${this.props.amount}
+          <button id={this.props.id} onClick={this.handleDelete}>X</button>
+          {/* <button id={this.props.id} onClick={this.toggleEdit}>Edit</button> */}
+        </p>
       </li>
     )
   }
