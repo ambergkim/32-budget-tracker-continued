@@ -15,7 +15,7 @@ class ExpenseList extends React.Component {
     console.log('expense list props expenses', this.props.expenses);
     return this.props.expenses.map((expense, i) => {
       if (this.props.categoryId === expense.categoryId) {
-        return <ExpenseItem key={i} id={expense.id} categoryId={expense.categoryId} name={expense.name} amount={expense.amount}></ExpenseItem>
+        return <ExpenseItem key={i} id={expense.id} categoryId={expense.categoryId} name={expense.name} amount={expense.amount} isEditing={expense.isEditing}></ExpenseItem>
       }
     });
   }

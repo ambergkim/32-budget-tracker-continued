@@ -34,18 +34,18 @@ class ExpenseItem extends React.Component {
   }
 
   render() {
-    // if (this.props.isEditing === true) {
-    //   return (
-    //     <div>
-    //       <ExpenseForm name="update" id={this.props.id}></ExpenseForm><button onClick={this.toggleOffEdit} id={this.props.id}>Cancel</button>
-    //     </div>
-    //   )
-    // }
+    if (this.props.isEditing === true) {
+      return (
+        <div>
+          <ExpenseForm name="update" id={this.props.id}></ExpenseForm><button onClick={this.toggleOffEdit} id={this.props.id}>Cancel</button>
+        </div>
+      )
+    }
     return (
       <li key={this.props.key} id={this.props.id}>
         <p>{this.props.name}: -${this.props.amount}
           <button id={this.props.id} onClick={this.handleDelete}>X</button>
-          {/* <button id={this.props.id} onClick={this.toggleEdit}>Edit</button> */}
+          <button id={this.props.id} onClick={this.toggleEdit}>Edit</button>
         </p>
       </li>
     )

@@ -16,6 +16,7 @@ class ExpenseForm extends React.Component {
       amount: 0,
       timestamp: Date.now(),
       categoryId: this.props.categoryId,
+      isEditing: false,
     }
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleAmountChange = this.handleAmountChange.bind(this);
