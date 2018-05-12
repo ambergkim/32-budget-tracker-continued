@@ -42,6 +42,7 @@ class CategoryForm extends React.Component {
       let newValue = Object.assign(this.state, {isEditing: false, id: this.props.id});
       this.props.categoryUpdate(this.state);
     }
+    console.log('state after category create is called', this.props.categories);
   }
 
 

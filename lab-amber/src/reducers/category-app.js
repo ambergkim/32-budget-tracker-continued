@@ -20,6 +20,7 @@ export default function categoryReducer(state, action) {
 
   switch(action.type) {
     case CATEGORY_CREATE:
+      console.log('category create state', state);
       currentCategories = state.categories.slice();
       let newCategory = Object.assign({}, {id: uuidv1(), isEditing: false}, action.value);
       currentCategories.push(newCategory);

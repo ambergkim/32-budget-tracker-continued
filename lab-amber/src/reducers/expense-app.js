@@ -53,6 +53,6 @@ export default function expenseReducer(state, action) {
       expenseIndex = currentExpenses.indexOf(expenseToRemove);
       currentExpenses.splice(expenseIndex, 1);
       return Object.assign(newState, state, {expenses: currentExpenses});
-    default: return newState;
+    default: return state;
   }
 }
